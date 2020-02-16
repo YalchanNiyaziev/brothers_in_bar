@@ -1,0 +1,45 @@
+How to start the application:
+        Import the project on Java IDE (IntelliJ, Eclipse, NetBeans, etc.)and run it on.
+
+How does the application work:
+    The whole task is implemented in the Main class. It contains the following methods:
+            public static int brotherInTheBar(int[] array) - it is used to implement the logic to find count of rounds .
+            public static boolean hasLargeLength(int[] array) - it is used to check the size of given array. According to the condition it has to be between 1 and 100 000.
+            public static boolean hasLargeElement(int[] array) - it is used to check the value of elements of an array if any of them is out of the boundary specified by the condition of assigment.  According to the condition each element has to be between 1 and 1 000 000.
+            public static void main(String[] args) - it is the entry point of the application
+
+Explanation of the method's implementation:
+
+            The entry point the application is "main" method. There are two array, which are initialized with example values from assigment.
+            Each array is checked for constraints by sending in methods "hasLargeElement" and "hasLargeLength".
+            If the condition is true the "brotherInTheBar" method is called.
+
+            First method receives array as parameter and there is a boolean variable, which has default value false.
+            On the next line there is a RunTimeException, which is created. After that there is a try catch block, which is used to catch RunTimeExceptions.
+            In the try block there is a for each loop, which iterates over the elements of the array and check their values.
+            If an element is out the range of possible values, RunTimeException will be thrown and it will be caught from catch statement and the boolean variable will assign value true.
+            Finally the methods return the value of boolean variable - isElementLarge.
+
+            The next method "hasLargeLength" also accepts an array as a parameter.
+            There is a boolean "isLarge" variable, which is initialed and has value true. It changes its value to the opposite, if the constrains are not kept.
+            On the next line there is a RunTimeException, which is created. After that there is a try catch block, which is used to catch RunTimeExceptions.
+            In the try section there is and if statement, which checks the size of the array. If it is bigger than the constraints, RunTimeException will be thrown and it will be caught from catch statement.
+            In the other case the boolean variable will assign value false.
+            Finally the methods return the value of boolean variable - hasLargeLength.
+
+            The major method is "brotherInTheBar". It receives "array" array as a parameter. This is the array from which we have to find count of round.
+            On the first line of method there is variable "roundCount" from int type, which is the counter for each round.
+            On the second line there is a variable "i", which will be the counter for do-while loop, which starts on the next line.
+            On the third line is beginning of do-while, which is used to iterate over array elements.
+            Our loop starts with incrementing our counter "i". After that there is an if statement, which checks whether element with index "i" is equal to element with index "i+1"
+            and whether element with index. If the condition in if statement is false then we go to check the condition in while statement and continue with the execution of the method.
+            In case that the condition in if statement is true, that means there is a round and we have to get in the block.
+            Once the round is found, it has to be removed from array. To do this each element of the round has to assigns 0.
+            In the if statement block, firstly variable "roundCount" increments. After that new array "bufArray" is created, which has size 3 less than array, which is iterated at the moment.
+            This array will be used to keep elements, which are different to 0.
+            On the next line all elements, which formed the round  are assigned with 0. On the next line there is a for loop, which is used to iterate "array.length" times
+            and save all elements of "array", which are different than 0, into "bufArray".
+            When for loop finishes "array" assigns "bufArray" and so "array" is same array, but with reduced length (less 3 than its previous).
+            For that the counter of do-while loop assigns 0 as new value and the iterations of do-while loop continues until there is no other rounds.
+            At the end of the method, it return  "roundCount" variable, which keeps count of all rounds.
+
